@@ -1,22 +1,29 @@
 /* ===================== DATA APLIKASI =====================
-   PROYEK KELOMPOK DEVOPS_1
+   CARA MENGISI PROYEK YANG SUDAH SELESAI:
+   - Proyek biasa: ganti "url: null" jadi "url: 'https://link-live-demo', kind: 'iframe'"
+   - Proyek berisi beberapa isi (seperti Proyek 1): pakai kind: "group"
+     dan isi daftar "children" dengan name + url.
+   Selama url masih null, ikon membuka jendela "Segera Hadir".
    ========================================================== */
 const APPS = [
   {
-    id: "bazarkita",
-    name: "BazarKita (Web)",
-    color: "linear-gradient(135deg,#0F2B46,#D89B3C)", // Tema Biru Tinta & Emas
-    url: "https://github.com/syifaulaskiaa-beep/bazarkita", // Link GitHub BazarKita
-    icon: `<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
-    kind: "github" // Tipe khusus untuk menampilkan tombol link GitHub
+    id: "proyek1",
+    name: "Proyek 1",
+    color: "linear-gradient(135deg,#d8ab3a,#b8862a)",
+    icon: `<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12l2.5 2.5L16 9"/>`,
+    kind: "group",
+    children: [
+      { name: "BazarKita (Web)", url: "https://syifaulaskiaa-beep.github.io/bazarkita/" },
+      { name: "ERD BazarKita", url: "https://drive.google.com/file/d/1ajpFfpf5myEDuAkujMAGka1--G7wYmSn/preview" }
+    ]
   },
   {
-    id: "erd_bazarkita",
-    name: "ERD BazarKita",
-    color: "linear-gradient(135deg,#2563eb,#1e40af)", // Tema Biru
-    url: "https://drive.google.com/file/d/1ajpFfpf5myEDuAkujMAGka1--G7wYmSn/preview", // Link Drive diubah ke /preview agar bisa tampil di iframe
-    icon: `<path d="M4 4h16v16H4z M4 9h16 M4 15h16 M9 4v16"/>`,
-    kind: "iframe"
+    id: "proyek2",
+    name: "Proyek 2",
+    color: "linear-gradient(135deg,#7c4dd1,#4c1d95)",
+    url: null,
+    icon: `<path d="M4 9l1.5-5h13L20 9M4 9h16M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9M9 13a3 3 0 006 0"/>`,
+    kind: "placeholder"
   },
   {
     id: "proyek3",
@@ -43,6 +50,34 @@ const APPS = [
     kind: "placeholder"
   },
   {
+    id: "filemanager",
+    name: "File Manager",
+    color: "linear-gradient(135deg,#e0a458,#c97f2e)",
+    icon: `<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>`,
+    kind: "filemanager"
+  },
+  {
+    id: "notepad",
+    name: "Notepad",
+    color: "linear-gradient(135deg,#8ab6d6,#4f7fa3)",
+    icon: `<path d="M6 3h9l3 3v15H6z"/><path d="M9 8h6M9 12h6M9 16h4"/>`,
+    kind: "notepad"
+  },
+  {
+    id: "calculator",
+    name: "Kalkulator",
+    color: "linear-gradient(135deg,#d17f9c,#a24f6e)",
+    icon: `<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01"/>`,
+    kind: "calculator"
+  },
+  {
+    id: "settings",
+    name: "Pengaturan",
+    color: "linear-gradient(135deg,#8b8f9c,#5b5f6b)",
+    icon: `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/>`,
+    kind: "settings"
+  },
+  {
     id: "about",
     name: "Tentang Kelompok",
     color: "linear-gradient(135deg,#b083d1,#8a63ad)",
@@ -50,6 +85,10 @@ const APPS = [
     kind: "about"
   }
 ];
+
+/* Jenis aplikasi yang dihitung sebagai "proyek" */
+const isProject = a => a.kind === "iframe" || a.kind === "group" || a.kind === "placeholder";
+const isFilled = a => a.kind === "iframe" || a.kind === "group";
 
 /* ===================== BOOT SEQUENCE ===================== */
 const bootMessages = [
@@ -198,27 +237,21 @@ function openApp(id){
   el.style.left = (40 + offset) + "px";
   el.style.top = (30 + offset) + "px";
 
-  // LOGIKA PEMBUATAN KONTEN JENDELA
-  let bodyHtml;
-  if (app.kind === "iframe") {
-    bodyHtml = `<iframe src="${app.url}" title="${app.name}" loading="lazy" style="width:100%; height:100%; border:none;"></iframe>`;
-  } else if (app.kind === "placeholder") {
-    bodyHtml = placeholderContentHTML(app);
-  } else if (app.kind === "github") {
-    bodyHtml = `
-      <div class="about-content" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; height:100%; padding:20px;">
-        <h2 style="margin-bottom:10px;">${app.name}</h2>
-        <p style="max-width:400px; margin-bottom:20px; font-size:14px; color:#aaa; line-height:1.5;">
-          Aplikasi ini berjalan di atas framework Laravel (PHP & MySQL). Karena Mini OS ini di-hosting menggunakan GitHub Pages (statis), kode sumber proyek dapat dilihat langsung melalui repository GitHub.
-        </p>
-        <a href="${app.url}" target="_blank" style="display:inline-block; padding:12px 24px; background:linear-gradient(135deg,#0F2B46,#D89B3C); color:#fff; text-decoration:none; border-radius:8px; font-weight:bold; font-family:inherit; box-shadow:0 4px 6px rgba(0,0,0,0.3);">
-          Buka Repository GitHub
-        </a>
-      </div>
-    `;
-  } else {
-    bodyHtml = aboutContentHTML();
-  }
+  const bodyHtml = app.kind === "iframe"
+    ? `<iframe src="${app.url}" title="${app.name}" loading="lazy"></iframe>`
+    : app.kind === "group"
+    ? groupHTML(app)
+    : app.kind === "placeholder"
+    ? placeholderContentHTML(app)
+    : app.kind === "filemanager"
+    ? fileManagerHTML()
+    : app.kind === "notepad"
+    ? notepadHTML()
+    : app.kind === "calculator"
+    ? calculatorHTML()
+    : app.kind === "settings"
+    ? settingsHTML()
+    : aboutContentHTML();
 
   el.innerHTML = `
     <div class="win-titlebar" data-role="drag">
@@ -239,6 +272,7 @@ function openApp(id){
   `;
 
   windowsLayer.appendChild(el);
+  initWindowContent(app, el);
 
   const tbBtn = document.createElement("button");
   tbBtn.className = "taskbar-app active";
@@ -283,6 +317,31 @@ function placeholderContentHTML(app){
       <p style="max-width:320px;">Proyek ini belum ditambahkan. Begitu tim DevOps_1 selesai mengerjakannya, buka <code style="font-family:var(--font-mono);font-size:12px;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;">script.js</code> dan isi link live demo-nya di bagian data APPS.</p>
     </div>
   `;
+}
+
+/* ===================== GRUP PROYEK (tab di dalam satu jendela) ===================== */
+function groupHTML(app){
+  const tabs = app.children.map((c, i) =>
+    `<button class="grp-tab" data-i="${i}" style="padding:8px 14px;border:0;border-radius:8px;background:rgba(255,255,255,0.08);color:inherit;cursor:pointer;font:inherit;">${c.name}</button>`
+  ).join("");
+  return `
+    <div style="display:flex;flex-direction:column;height:100%;">
+      <div style="display:flex;gap:8px;padding:8px;flex-wrap:wrap;">${tabs}</div>
+      <iframe data-role="grpFrame" title="${app.name}" style="flex:1;border:0;width:100%;background:#fff;"></iframe>
+    </div>
+  `;
+}
+function wireGroup(app, el){
+  const frame = el.querySelector('[data-role="grpFrame"]');
+  const tabs = el.querySelectorAll(".grp-tab");
+  function select(i){
+    frame.src = app.children[i].url;
+    tabs.forEach((t, j) => {
+      t.style.background = j === i ? "rgba(216,171,58,0.4)" : "rgba(255,255,255,0.08)";
+    });
+  }
+  tabs.forEach(t => t.addEventListener("click", () => select(+t.dataset.i)));
+  select(0);
 }
 
 function aboutContentHTML(){
@@ -342,7 +401,7 @@ function makeDraggable(el, id){
   window.addEventListener("mousemove", (e) => {
     if (!dragging) return;
     const w = openWindows[id];
-    if (w.maximized) return;
+    if (!w || w.maximized) return;
     el.style.left = Math.max(0, ox + (e.clientX - sx)) + "px";
     el.style.top = Math.max(0, oy + (e.clientY - sy)) + "px";
   });
@@ -372,6 +431,227 @@ function makeResizable(el, id){
   });
   window.addEventListener("mouseup", () => { resizing = false; document.body.style.userSelect = ""; });
 }
+
+/* ===================== FILE MANAGER ===================== */
+function fileManagerHTML(){
+  const rows = APPS.filter(isProject).map(a => `
+    <div class="fm-row" data-id="${a.id}">
+      <span class="fm-icon" style="background:${a.color}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6">${a.icon}</svg>
+      </span>
+      <span class="fm-name">${a.name}</span>
+      <span class="fm-status ${isFilled(a) ? "ok" : "empty"}">${isFilled(a) ? "Sudah Ada" : "Kosong"}</span>
+    </div>
+  `).join("");
+  return `
+    <div class="filemanager">
+      <div class="fm-head"><span>Nama Proyek</span><span>Status</span></div>
+      <div class="fm-list">${rows}</div>
+    </div>
+  `;
+}
+
+function wireFileManager(el){
+  el.querySelectorAll(".fm-row").forEach(row => {
+    row.addEventListener("dblclick", () => openApp(row.dataset.id));
+  });
+}
+
+/* ===================== NOTEPAD ===================== */
+const NOTEPAD_KEY = "devops1-notepad-text";
+function notepadHTML(){
+  const saved = localStorage.getItem(NOTEPAD_KEY) || "";
+  return `
+    <div class="notepad">
+      <textarea class="notepad-area" placeholder="Tulis catatan tim di sini...">${saved}</textarea>
+      <div class="notepad-status" data-role="status">Tersimpan otomatis</div>
+    </div>
+  `;
+}
+function wireNotepad(el){
+  const area = el.querySelector(".notepad-area");
+  const status = el.querySelector('[data-role="status"]');
+  let t = null;
+  area.addEventListener("input", () => {
+    status.textContent = "Menyimpan\u2026";
+    clearTimeout(t);
+    t = setTimeout(() => {
+      localStorage.setItem(NOTEPAD_KEY, area.value);
+      status.textContent = "Tersimpan otomatis";
+    }, 400);
+  });
+}
+
+/* ===================== KALKULATOR ===================== */
+function calculatorHTML(){
+  const keys = ["7","8","9","/","4","5","6","*","1","2","3","-","0",".","=","+"];
+  const buttons = keys.map(k => `<button class="calc-btn ${"+-*/=".includes(k) ? "op" : ""}" data-key="${k}">${k}</button>`).join("");
+  return `
+    <div class="calculator">
+      <div class="calc-display" data-role="display">0</div>
+      <div class="calc-grid">
+        <button class="calc-btn clear" data-key="C">C</button>
+        <button class="calc-btn clear" data-key="DEL">DEL</button>
+        <span></span><span></span>
+        ${buttons}
+      </div>
+    </div>
+  `;
+}
+function wireCalculator(el){
+  const display = el.querySelector('[data-role="display"]');
+  let expr = "";
+  function render(){ display.textContent = expr === "" ? "0" : expr; }
+  el.querySelectorAll(".calc-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const k = btn.dataset.key;
+      if (k === "C"){ expr = ""; }
+      else if (k === "DEL"){ expr = expr.slice(0, -1); }
+      else if (k === "="){
+        try {
+          if (!/^[0-9+\-*/.\s]+$/.test(expr)) throw new Error("invalid");
+          // eslint-disable-next-line no-eval
+          const result = Function('"use strict";return (' + expr + ")")();
+          expr = String(Math.round(result * 1e8) / 1e8);
+        } catch(e){ expr = "Error"; }
+      } else {
+        if (expr === "Error") expr = "";
+        expr += k;
+      }
+      render();
+    });
+  });
+}
+
+/* ===================== PENGATURAN ===================== */
+const WALLPAPERS = [
+  { name: "Gelap Emas", css: "radial-gradient(circle at 15% 15%, rgba(216,171,58,0.12), transparent 40%), radial-gradient(circle at 85% 80%, rgba(111,179,166,0.12), transparent 40%), linear-gradient(160deg, #101722, #0b0f16 70%)" },
+  { name: "Malam Ungu", css: "radial-gradient(circle at 20% 20%, rgba(176,131,209,0.16), transparent 45%), radial-gradient(circle at 80% 75%, rgba(76,29,149,0.18), transparent 45%), linear-gradient(160deg, #140f1e, #0b0f16 70%)" },
+  { name: "Laut Tenang", css: "radial-gradient(circle at 20% 20%, rgba(111,168,220,0.18), transparent 45%), radial-gradient(circle at 80% 80%, rgba(111,179,166,0.14), transparent 45%), linear-gradient(160deg, #0c1a24, #0b0f16 70%)" },
+  { name: "Hutan Senja", css: "radial-gradient(circle at 20% 20%, rgba(61,107,74,0.2), transparent 45%), radial-gradient(circle at 80% 80%, rgba(216,171,58,0.14), transparent 45%), linear-gradient(160deg, #10190f, #0b0f16 70%)" }
+];
+function settingsHTML(){
+  const swatches = WALLPAPERS.map((w, i) => `<button class="wp-swatch" data-index="${i}" style="background:${w.css}"><span>${w.name}</span></button>`).join("");
+  return `
+    <div class="settings-panel">
+      <h3>Wallpaper</h3>
+      <div class="wp-grid">${swatches}</div>
+      <h3>Volume Sistem</h3>
+      <input type="range" min="0" max="100" value="70" class="settings-slider" data-role="volume">
+      <h3>Tentang Sistem</h3>
+      <div class="settings-info">
+        <p><strong>Nama Sistem:</strong> DevOps_1 OS</p>
+        <p><strong>Versi:</strong> 1.0</p>
+        <p><strong>Kelompok:</strong> DevOps_1</p>
+        <p><strong>Proyek Terisi:</strong> <span id="settingsFilledCount"></span> dari ${APPS.filter(isProject).length}</p>
+      </div>
+    </div>
+  `;
+}
+function wireSettings(el){
+  el.querySelectorAll(".wp-swatch").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const wp = WALLPAPERS[btn.dataset.index];
+      document.getElementById("desktop").style.background = wp.css;
+      showToast(`Wallpaper diganti ke "${wp.name}"`);
+    });
+  });
+  const countEl = el.querySelector("#settingsFilledCount");
+  if (countEl) countEl.textContent = APPS.filter(isFilled).length;
+}
+
+/* ===================== INIT PER JENDELA ===================== */
+function initWindowContent(app, el){
+  if (app.kind === "group") wireGroup(app, el);
+  if (app.kind === "filemanager") wireFileManager(el);
+  if (app.kind === "notepad") wireNotepad(el);
+  if (app.kind === "calculator") wireCalculator(el);
+  if (app.kind === "settings") wireSettings(el);
+}
+
+/* ===================== NOTIFIKASI (TOAST) ===================== */
+function showToast(message){
+  let container = document.getElementById("toastContainer");
+  if (!container){
+    container = document.createElement("div");
+    container.id = "toastContainer";
+    container.className = "toast-container";
+    document.getElementById("desktop").appendChild(container);
+  }
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => { toast.classList.add("out"); setTimeout(() => toast.remove(), 300); }, 3200);
+}
+
+/* ===================== KLIK KANAN DESKTOP ===================== */
+const desktopEl = document.getElementById("desktop");
+let ctxMenuEl = null;
+function buildContextMenu(x, y){
+  if (ctxMenuEl) ctxMenuEl.remove();
+  ctxMenuEl = document.createElement("div");
+  ctxMenuEl.className = "ctx-menu";
+  ctxMenuEl.style.left = x + "px";
+  ctxMenuEl.style.top = y + "px";
+  ctxMenuEl.innerHTML = `
+    <button data-act="refresh">Segarkan</button>
+    <button data-act="wallpaper">Ganti Wallpaper</button>
+    <button data-act="about">Tentang Sistem</button>
+  `;
+  document.body.appendChild(ctxMenuEl);
+  ctxMenuEl.querySelector('[data-act="refresh"]').addEventListener("click", () => {
+    showToast("Desktop disegarkan");
+    closeContextMenu();
+  });
+  ctxMenuEl.querySelector('[data-act="wallpaper"]').addEventListener("click", () => {
+    const wp = WALLPAPERS[Math.floor(Math.random() * WALLPAPERS.length)];
+    desktopEl.style.background = wp.css;
+    showToast(`Wallpaper diganti ke "${wp.name}"`);
+    closeContextMenu();
+  });
+  ctxMenuEl.querySelector('[data-act="about"]').addEventListener("click", () => {
+    openApp("about");
+    closeContextMenu();
+  });
+}
+function closeContextMenu(){
+  if (ctxMenuEl){ ctxMenuEl.remove(); ctxMenuEl = null; }
+}
+desktopEl.addEventListener("contextmenu", (e) => {
+  if (e.target.closest(".app-window") || e.target.closest(".taskbar") || e.target.closest(".start-menu")) return;
+  e.preventDefault();
+  buildContextMenu(e.clientX, e.clientY);
+});
+document.addEventListener("click", (e) => {
+  if (ctxMenuEl && !ctxMenuEl.contains(e.target)) closeContextMenu();
+});
+
+/* ===================== PENCARIAN START MENU ===================== */
+const startSearchInput = document.getElementById("startSearch");
+if (startSearchInput){
+  startSearchInput.addEventListener("input", () => {
+    const q = startSearchInput.value.toLowerCase();
+    startMenuList.querySelectorAll(".start-menu-item").forEach(item => {
+      item.style.display = item.textContent.toLowerCase().includes(q) ? "flex" : "none";
+    });
+  });
+}
+
+/* ===================== TOAST SAAT LOGIN ===================== */
+document.getElementById("loginBtn").addEventListener("click", () => {
+  setTimeout(() => showToast("Selamat datang, Kelompok DevOps_1!"), 500);
+});
+
+/* ===================== TOAST SAAT BUKA PLACEHOLDER ===================== */
+const _openAppOriginal = openApp;
+openApp = function(id){
+  const app = APPS.find(a => a.id === id);
+  if (app && app.kind === "placeholder" && !openWindows[id]){
+    showToast(`${app.name} belum tersedia \u2014 segera hadir`);
+  }
+  _openAppOriginal(id);
+};
 
 /* ===================== INIT ===================== */
 runBoot();
