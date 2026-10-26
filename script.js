@@ -13,7 +13,7 @@ const APPS = [
     icon: `<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12l2.5 2.5L16 9"/>`,
     kind: "group",
     children: [
-      { name: "BazarKita (Web)", url: "https://syifaulaskiaa-beep.github.io/bazarkita/" },
+      { name: "BazarKita (Web)", url: "https://bazarkita.rf.gd" },
       { name: "ERD BazarKita", url: "https://drive.google.com/file/d/1ajpFfpf5myEDuAkujMAGka1--G7wYmSn/preview" }
     ]
   },
@@ -326,7 +326,10 @@ function groupHTML(app){
   ).join("");
   return `
     <div style="display:flex;flex-direction:column;height:100%;">
-      <div style="display:flex;gap:8px;padding:8px;flex-wrap:wrap;">${tabs}</div>
+      <div style="display:flex;gap:8px;padding:8px;flex-wrap:wrap;align-items:center;">
+        ${tabs}
+        <a data-role="grpOpen" href="#" target="_blank" rel="noopener" style="margin-left:auto;color:inherit;font-size:13px;opacity:.85;">&#8599; Buka di tab baru</a>
+      </div>
       <iframe data-role="grpFrame" title="${app.name}" style="flex:1;border:0;width:100%;background:#fff;"></iframe>
     </div>
   `;
@@ -336,6 +339,8 @@ function wireGroup(app, el){
   const tabs = el.querySelectorAll(".grp-tab");
   function select(i){
     frame.src = app.children[i].url;
+    const openLink = el.querySelector('[data-role="grpOpen"]');
+    if (openLink) openLink.href = app.children[i].url.replace("/preview", "/view");
     tabs.forEach((t, j) => {
       t.style.background = j === i ? "rgba(216,171,58,0.4)" : "rgba(255,255,255,0.08)";
     });
