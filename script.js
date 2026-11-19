@@ -21,9 +21,12 @@ const APPS = [
     id: "proyek2",
     name: "Proyek 2",
     color: "linear-gradient(135deg,#7c4dd1,#4c1d95)",
-    url: null,
     icon: `<path d="M4 9l1.5-5h13L20 9M4 9h16M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9M9 13a3 3 0 006 0"/>`,
-    kind: "placeholder"
+    kind: "group",
+    children: [
+      { name: "Konsera (Web)", url: "https://konsera.freedev.app" },
+      { name: "Rancangan Sistem Konsera", url: "https://drive.google.com/file/d/1pHZnG4TPnqSJP5nFZC2jzP2K07DkY0FY/preview" }
+    ]
   },
   {
     id: "proyek3",
